@@ -1,0 +1,54 @@
+<!-- headphones/templates/headphones/headphone_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphone Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .error {
+            color: red;
+            font-size: 1.2em;
+        }
+        .model-info h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .model-info p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% else %}
+            <div class="model-info">
+                <h2>{{ headphone.name }}</h2>
+                <p><strong>Description:</strong> {{ headphone.description }}</p>
+                <p><strong>Price:</strong> {{ headphone.price }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
